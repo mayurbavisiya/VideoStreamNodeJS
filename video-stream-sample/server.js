@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/video', function(req, res) {
-  const path = 'C:/Users/Administrator/Desktop/sample.mp4'
+  const path = 'public/ABC.mp4'
   const stat = fs.statSync(path)
   const fileSize = stat.size
   const range = req.headers.range
@@ -42,6 +42,8 @@ app.get('/video', function(req, res) {
     fs.createReadStream(path).pipe(res)
   }
 })
+
+
 
 app.listen(3000, function () {
   console.log('Listening on port 3000!')
