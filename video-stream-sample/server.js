@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
 })
 
 app.get('/video', function(req, res) {
-  const path = 'public/ABC.mp4'
+  const path = 'public/ABA.mp4'
   const stat = fs.statSync(path)
   const fileSize = stat.size
   const range = req.headers.range
@@ -44,7 +44,7 @@ app.get('/video', function(req, res) {
 })
 
 
-
-app.listen(3000, function () {
-  console.log('Listening on port 3000!')
-})
+var port = process.env.PORT || 8000
+app.listen(port, function() {
+    console.log("App is running on port " + port);
+});
